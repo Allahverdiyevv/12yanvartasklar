@@ -1,0 +1,39 @@
+﻿@model List<Slider>
+@{
+    ViewData["Title"] = "Index";
+    int Count = 0;
+}
+<h1>Index</h1>
+<button type="button" class="btn btn-success" ; asp-action="Creat" ; asp-controller="slider">Success</button>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title1</th>
+            <th scope="col">Title2</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            Count++;
+            <tr>
+                <th scope="row">@Count</th>
+                <td>@item.Title1</td>
+                <td>@item.Title2</td>
+                <td>
+                    <button type="button" ;class="btn btn-primary" ;asp-action="update" ; asp-controller="slider">Update</button>
+                    <button type="button" class="btn btn-danger" ;asp-action="delete" ; asp-controller="slider">Delete</button>
+
+                </td>
+                
+            </tr>
+        }
+   
+  
+    </tbody>
+</table>
+
